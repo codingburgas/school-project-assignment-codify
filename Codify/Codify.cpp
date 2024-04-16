@@ -1,8 +1,17 @@
 #include <iostream>
+#include <raylib.h>
 using namespace std;
 
 int main()
 {
-	cout << "Hello World!";
+	InitWindow(800, 450, "Codify");
+
+	while (!WindowShouldClose())
+	{
+		BeginDrawing();
+		ClearBackground(RAYWHITE);
+		EndDrawing();
+	}
+	CloseWindow();
 }
 
