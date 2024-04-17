@@ -137,11 +137,13 @@
     <ClCompile Include="login.cpp" />
     <ClCompile Include="mainMenu.cpp" />
     <ClCompile Include="register.cpp" />
+    <ClCompile Include="resultUserMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="login.h" />
     <ClInclude Include="mainMenu.h" />
     <ClInclude Include="register.h" />
+    <ClInclude Include="resultUserMenu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
