@@ -4,6 +4,8 @@
 #include "login.h"
 #include "register.h"
 #include "resultUserMenu.h"
+#include "testMenu.h"
+#include "adminTest.h"
 using namespace std;
 
 int main()
@@ -12,7 +14,7 @@ int main()
 
 	while (!WindowShouldClose())
 	{
-		userResultMenu();
+		adminTest();
 	}
 	CloseWindow();
 }

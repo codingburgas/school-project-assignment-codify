@@ -133,17 +133,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="adminTest.cpp" />
     <ClCompile Include="Codify.cpp" />
     <ClCompile Include="login.cpp" />
     <ClCompile Include="mainMenu.cpp" />
     <ClCompile Include="register.cpp" />
     <ClCompile Include="resultUserMenu.cpp" />
+    <ClCompile Include="testMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="adminTest.h" />
     <ClInclude Include="login.h" />
     <ClInclude Include="mainMenu.h" />
     <ClInclude Include="register.h" />
     <ClInclude Include="resultUserMenu.h" />
+    <ClInclude Include="testMenu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
