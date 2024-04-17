@@ -1,6 +1,7 @@
 #include <iostream>
 #include <raylib.h>
 #include "mainMenu.h"
+#include "login.h"
 using namespace std;
 
 int main()
@@ -9,7 +10,7 @@ int main()
 
 	while (!WindowShouldClose())
 	{
-		mainMenu();
+		loginMenu();
 	}
 	CloseWindow();
 }
