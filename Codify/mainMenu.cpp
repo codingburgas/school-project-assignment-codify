@@ -1,29 +1,15 @@
 #include <raylib.h>
 using namespace std;
-
+Color c1 = RAYWHITE, c2 = RAYWHITE;
 void mainMenu()
 {
-	Color c1, c2;
+	
 	Rectangle mousePos = { GetMouseX(), GetMouseY(), 10,10 };
-	if (CheckCollisionRecs({ 1920.0f / 2.43f, 490,370,80 }, mousePos))
-	{
-		c1 = LIGHTGRAY;
-		SetMouseCursor(MOUSE_CURSOR_POINTING_HAND);
-	}
-	else
-	{
-		c1 = RAYWHITE;
-		SetMouseCursor(MOUSE_CURSOR_DEFAULT);
-	}
-	if (CheckCollisionRecs({ 1920.0f / 2.43f, 610,370,80 }, mousePos))
-	{ 
-		c2 = LIGHTGRAY; 
-		SetMouseCursor(MOUSE_CURSOR_POINTING_HAND);
-	}
-	else {
-		c2 = RAYWHITE;
-		SetMouseCursor(MOUSE_CURSOR_DEFAULT);
-	}
+
+	if (CheckCollisionRecs({ 1920.0f / 2.43f, 490,370,80 }, mousePos) || CheckCollisionRecs({ 1920.0f / 2.43f, 610,370,80 }, mousePos))
+		SetMouseCursor(MOUSE_CURSOR_POINTING_HAND); else SetMouseCursor(MOUSE_CURSOR_DEFAULT);
+	if (CheckCollisionRecs({ 1920.0f / 2.43f, 490,370,80 }, mousePos)) c1 = LIGHTGRAY; else c1 = RAYWHITE;
+	if (CheckCollisionRecs({ 1920.0f / 2.43f, 610,370,80 }, mousePos)) c2 = LIGHTGRAY; else c2 = RAYWHITE;
 	BeginDrawing();
 	ClearBackground(RAYWHITE);
 	DrawRectangleRounded({ 1920.0f / 3.1f, 290, 700,550 }, 0.15, 0, RAYWHITE);
