@@ -11,7 +11,7 @@ int main()
 
 	while (!WindowShouldClose())
 	{
-		registerMenu();
+		loginMenu();
 	}
 	CloseWindow();
 }
