@@ -2,6 +2,7 @@
 #include <raylib.h>
 #include "mainMenu.h"
 #include "login.h"
+#include "register.h"
 using namespace std;
 
 int main()
@@ -10,7 +11,7 @@ int main()
 
 	while (!WindowShouldClose())
 	{
-		loginMenu();
+		registerMenu();
 	}
 	CloseWindow();
 }
