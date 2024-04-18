@@ -7,7 +7,7 @@ void testMenu()
 	BeginDrawing();
 	ClearBackground(RAYWHITE);
 	if (CheckCollisionRecs({ 1350,420, 250, 100 }, mousePos)) c1 = LIGHTGRAY; else c1 = RAYWHITE;
-	if (CheckCollisionRecs({ 650, 475, 600, 85 }, mousePos)) c2 = LIGHTGRAY; else c2 = RAYWHITE;
+	if (CheckCollisionRecs({ 1050,420, 275, 100 }, mousePos)) c2 = LIGHTGRAY; else c2 = RAYWHITE;
 	if (CheckCollisionRecs({ 650, 475, 600, 85 }, mousePos)) c3 = LIGHTGRAY; else c3 = RAYWHITE;
 	if (CheckCollisionRecs({ 650, 475, 600, 85 }, mousePos)) c4 = LIGHTGRAY; else c4 = RAYWHITE;
 	if (CheckCollisionRecs({ 650, 475, 600, 85 }, mousePos)) c5 = LIGHTGRAY; else c5 = RAYWHITE;
