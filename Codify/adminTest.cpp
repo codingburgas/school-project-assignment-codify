@@ -36,14 +36,14 @@ void adminTest()
 		{ 925, 370 },
 		{ 1025, 370 },
 		{ 975, 320 }, 
-		RED
+		BLACK
 	);
 	DrawTriangle(
 		{ 925, 900 },
 		{ 975, 950 },
 		{ 1025, 900 },
 
-		RED 
+		BLACK 
 	);
 	DrawText("Available Tests", 725, 75, 60, BLACK);
 	DrawText("Select Test", 775, 225, 60, BLACK);
