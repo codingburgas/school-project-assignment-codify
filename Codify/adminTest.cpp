@@ -2,27 +2,35 @@
 using namespace std;
 void adminTest()
 {
+	Color c1 = RAYWHITE, c2 = RAYWHITE, c3 = RAYWHITE, c4 = RAYWHITE, c5 = RAYWHITE, c6 = RAYWHITE;
+	Rectangle mousePos = { GetMouseX(), GetMouseY(), 10,10 };
 	BeginDrawing();
 	ClearBackground(RAYWHITE);
+	if (CheckCollisionRecs({ 1350,420, 250, 100 }, mousePos)) c1 = LIGHTGRAY; else c1 = RAYWHITE;
+	if (CheckCollisionRecs({ 1050,420, 275, 100 }, mousePos)) c2 = LIGHTGRAY; else c2 = RAYWHITE;
+	if (CheckCollisionRecs({ 1350,590, 250, 100 }, mousePos)) c3 = LIGHTGRAY; else c3 = RAYWHITE;
+	if (CheckCollisionRecs({ 1050,590, 275, 100 }, mousePos)) c4 = LIGHTGRAY; else c4 = RAYWHITE;
+	if (CheckCollisionRecs({ 1350,760, 250, 100 }, mousePos)) c5 = LIGHTGRAY; else c5 = RAYWHITE;
+	if (CheckCollisionRecs({ 1050,760, 275, 100 }, mousePos)) c6 = LIGHTGRAY; else c6 = RAYWHITE;
 	DrawRectangleRounded({ 250,200, 1420, 770 }, 0.15, 0, RAYWHITE);
 	DrawRectangleRoundedLines({ 250,200, 1420, 770 }, 0.25, 0, 5, BLACK); //geography tab
 	DrawRectangleRounded({ 300,400, 1320, 140 }, 0.15, 0, RAYWHITE);  // geography tab
 	DrawRectangleRoundedLines({ 300,400, 1320, 140 }, 0.25, 0, 5, BLACK);
-	DrawRectangleRounded({ 1350,420, 250, 100 }, 0.15, 0, RAYWHITE); //review button
+	DrawRectangleRounded({ 1350,420, 250, 100 }, 0.15, 0, c1); //review button
 	DrawRectangleRoundedLines({ 1350,420, 250, 100 }, 0.25, 0, 5, BLACK);
-	DrawRectangleRounded({ 1050,420, 275, 100 }, 0.15, 0, RAYWHITE); //attempt button
+	DrawRectangleRounded({ 1050,420, 275, 100 }, 0.15, 0, c2); //attempt button
 	DrawRectangleRoundedLines({ 1050,420, 275, 100 }, 0.25, 0, 5, BLACK);
 	DrawRectangleRounded({ 300,570, 1320, 140 }, 0.15, 0, RAYWHITE); //history tab
 	DrawRectangleRoundedLines({ 300,570, 1320, 140 }, 0.25, 0, 5, BLACK);
-	DrawRectangleRounded({ 1350,590, 250, 100 }, 0.15, 0, RAYWHITE); //review button
+	DrawRectangleRounded({ 1350,590, 250, 100 }, 0.15, 0, c3); //review button
 	DrawRectangleRoundedLines({ 1350,590, 250, 100 }, 0.25, 0, 5, BLACK);
-	DrawRectangleRounded({ 1050,590, 275, 100 }, 0.15, 0, RAYWHITE); //attempt button
+	DrawRectangleRounded({ 1050,590, 275, 100 }, 0.15, 0, c4); //attempt button
 	DrawRectangleRoundedLines({ 1050,590, 275, 100 }, 0.25, 0, 5, BLACK);
 	DrawRectangleRounded({ 300,740, 1320, 140 }, 0.15, 0, RAYWHITE); //biology tab
 	DrawRectangleRoundedLines({ 300,740, 1320, 140 }, 0.25, 0, 5, BLACK);
-	DrawRectangleRounded({ 1350,760, 250, 100 }, 0.15, 0, RAYWHITE); //review button
+	DrawRectangleRounded({ 1350,760, 250, 100 }, 0.15, 0, c5); //review button
 	DrawRectangleRoundedLines({ 1350,760, 250, 100 }, 0.25, 0, 5, BLACK);
-	DrawRectangleRounded({ 1050,760, 275, 100 }, 0.15, 0, RAYWHITE); //attempt button
+	DrawRectangleRounded({ 1050,760, 275, 100 }, 0.15, 0, c6); //attempt button
 	DrawRectangleRoundedLines({ 1050,760, 275, 100 }, 0.25, 0, 5, BLACK);
 	DrawTriangle(
 		{ 925, 370 },
