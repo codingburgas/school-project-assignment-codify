@@ -1,9 +1,8 @@
 #include <raylib.h>
 using namespace std;
-Color c1 = RAYWHITE, c2 = RAYWHITE;
 void mainMenu()
 {
-	
+	Color c1 = RAYWHITE, c2 = RAYWHITE;
 	Rectangle mousePos = { GetMouseX(), GetMouseY(), 10,10 };
 	if (CheckCollisionRecs({ 1920.0f / 2.43f, 490,370,80 }, mousePos) || CheckCollisionRecs({ 1920.0f / 2.43f, 610,370,80 }, mousePos))
 		SetMouseCursor(MOUSE_CURSOR_POINTING_HAND); else SetMouseCursor(MOUSE_CURSOR_DEFAULT);

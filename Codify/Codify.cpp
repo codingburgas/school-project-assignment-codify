@@ -14,7 +14,7 @@ int main()
 
 	while (!WindowShouldClose())
 	{
-		adminTest();
+		testMenu();
 	}
 	CloseWindow();
 }
