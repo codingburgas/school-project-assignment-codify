@@ -10,7 +10,7 @@ void testMenu()
 	if (CheckCollisionRecs({ 1050,420, 275, 100 }, mousePos)) c2 = LIGHTGRAY; else c2 = RAYWHITE;
 	if (CheckCollisionRecs({ 1350,590, 250, 100 }, mousePos)) c3 = LIGHTGRAY; else c3 = RAYWHITE;
 	if (CheckCollisionRecs({ 1050,590, 275, 100 }, mousePos)) c4 = LIGHTGRAY; else c4 = RAYWHITE;
-	if (CheckCollisionRecs({ 650, 475, 600, 85 }, mousePos)) c5 = LIGHTGRAY; else c5 = RAYWHITE;
+	if (CheckCollisionRecs({ 1350,760, 250, 100 }, mousePos)) c5 = LIGHTGRAY; else c5 = RAYWHITE;
 	if (CheckCollisionRecs({ 650, 475, 600, 85 }, mousePos)) c6 = LIGHTGRAY; else c6 = RAYWHITE;
 
 	DrawRectangleRounded({ 250,200, 1420, 730 }, 0.15, 0, RAYWHITE);
