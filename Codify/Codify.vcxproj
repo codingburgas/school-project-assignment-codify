@@ -134,6 +134,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="adminTest.cpp" />
+    <ClCompile Include="categories.cpp" />
     <ClCompile Include="Codify.cpp" />
     <ClCompile Include="login.cpp" />
     <ClCompile Include="mainMenu.cpp" />
@@ -143,6 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="adminTest.h" />
+    <ClInclude Include="categories.h" />
     <ClInclude Include="login.h" />
     <ClInclude Include="mainMenu.h" />
     <ClInclude Include="register.h" />

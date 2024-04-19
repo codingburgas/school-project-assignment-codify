@@ -6,6 +6,8 @@
 #include "resultUserMenu.h"
 #include "testMenu.h"
 #include "adminTest.h"
+#include "categories.h"
+
 using namespace std;
 
 int main()
@@ -14,7 +16,7 @@ int main()
 
 	while (!WindowShouldClose())
 	{
-		adminTest();
+		categories();
 	}
 	CloseWindow();
 }
