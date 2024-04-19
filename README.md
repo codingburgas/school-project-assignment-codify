@@ -17,6 +17,10 @@ You can install our project by using this link:
 
 
 ## <img align="center" src="https://cdn.iconscout.com/icon/free/png-256/free-team-1543514-1306008.png" width="30">   Team members
+| Iva Nedkova  | Bozhidar Dukov | Todor Ivanov | Konstantin Nachev | Dimitar Kostadinov |  Plamen Petkov |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| [INNedkova21](https://github.com/INNedkova21)  | [BNDukov21](https://github.com/BNDukovXXI) | [TPIvanov21](https://github.com/TPIvanov21) | [KKNachev22](https://github.com/KKNachev22)  | [DKKostadinov22](https://github.com/DKKostadinov22) | [PRPetkov22](https://github.com/PRPetkov22)
+| Scrum Trainer | Back-end Developer | Back-end Developer |  Back-end Developer | Back-end Developer | QA |
 
 
 ## <img align="center" src="https://cdn-icons-png.flaticon.com/512/3396/3396255.png" width="30">   Documents
