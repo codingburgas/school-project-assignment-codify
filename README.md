@@ -7,6 +7,9 @@
 
 
 ## <img align="center" src="https://cdn1.iconfinder.com/data/icons/miscellaneous-5-color-shadow/128/demo_beta_demonstration-512.png" width="30"> Demo of our project
+<div align = "center">
+  <img src="images/demo1.png" width=900px>
+</div>
 
 
 ## <img align="center" src="https://icons.veryicon.com/png/o/miscellaneous/admin-dashboard-flat-multicolor/setting-19.png" width="30"> Installing
