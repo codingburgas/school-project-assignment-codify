@@ -1,10 +1,31 @@
 #include <iostream>
 #include <raylib.h>
 #include <string>
+#include "../library/sqlite3pp-1.0.9/headeronly_src/sqlite3pp.h"
 using namespace std;
+using namespace sqlite3pp;
 string regInputUser = "";
 string regInputPass = "";
-void registerMenu()
+extern int menuState;
+
+
+bool registerUser(database& db, const char* username, const char* password)
+{
+	query q(db, "SELECT * FROM Users WHERE user = ?");
+	q.bind(1, username, nocopy);
+	if (q.begin() != q.end()) 
+	{
+		cout << "Username already exists. Please choose a different one." << endl;
+		return false;
+	}
+	command cmd(db, "INSERT INTO Users (user,password) VALUES (:user,:pass)");
+	cmd.bind(":user", username, nocopy);
+	cmd.bind(":pass", password, nocopy);
+	cmd.execute();
+	cout << "Registration successful!" << endl;
+	return true;
+}
+void registerMenu(database& db)
 {
 	Rectangle mousePos = { GetMouseX(), GetMouseY(), 10,10 };
 	Color c1 = RAYWHITE, c2 = RAYWHITE, c3 = RAYWHITE;
@@ -47,5 +68,15 @@ void registerMenu()
 	DrawRectangleRoundedLines({ 850, 775, 200, 85 }, 0.2, 0, 5, BLACK); // register btn
 	DrawText("Register", 865, 800, 40, BLACK);
 	DrawText("Create a New Account", 665, 300, 50, BLACK);
+	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+	{
+		if (CheckCollisionRecs({ 850, 775, 200, 85 }, mousePos) && registerUser(db, userText, passwordText))
+		{
+			menuState = 0;
+			regInputUser = "";
+			regInputPass = "";
+		}
+	}
+	
 	EndDrawing();
 }
