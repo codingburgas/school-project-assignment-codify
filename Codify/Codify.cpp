@@ -18,8 +18,6 @@ int main()
 	database db("database.db");
 	db.execute("CREATE TABLE IF NOT EXISTS Users (id INTEGER PRIMARY KEY, user TEXT, password TEXT, isAdmin BIT)");
 	InitWindow(1920, 1080, "Codify");
-
-
 	while (!WindowShouldClose())
 	{
 		switch (menuState)
@@ -49,4 +47,3 @@ int main()
 	}
 	CloseWindow();
 }
-
