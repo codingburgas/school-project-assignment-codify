@@ -7,6 +7,7 @@
 #include "testMenu.h"
 #include "adminTest.h"
 #include "categories.h"
+#include "testQuestion.cpp"
 #include "../library/sqlite3pp-1.0.9/headeronly_src/sqlite3pp.h"
 
 using namespace std;

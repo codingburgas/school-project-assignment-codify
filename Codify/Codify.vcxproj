@@ -145,10 +145,12 @@
     <ClCompile Include="register.cpp" />
     <ClCompile Include="resultUserMenu.cpp" />
     <ClCompile Include="testMenu.cpp" />
+    <ClCompile Include="testQuestion.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="adminTest.h" />
     <ClInclude Include="categories.h" />
+    <ClInclude Include="testQuestion.h" />
     <ClInclude Include="login.h" />
     <ClInclude Include="mainMenu.h" />
     <ClInclude Include="register.h" />
