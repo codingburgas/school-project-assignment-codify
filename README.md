@@ -9,6 +9,8 @@
 ## <img align="center" src="https://cdn1.iconfinder.com/data/icons/miscellaneous-5-color-shadow/128/demo_beta_demonstration-512.png" width="30"> Demo of our project
 <div align = "center">
   <img src="images/demo1.png" width=900px>
+  <img src="images/demo2.png" width=900px>
+  <img src="images/demo3.png" width=900px>
 </div>
 
 
