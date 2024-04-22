@@ -1,16 +1,11 @@
 #include <iostream>
 #include <raylib.h>
+#include "../library/sqlite3pp-1.0.9/headeronly_src/sqlite3pp.h"
+using namespace sqlite3pp;
 using namespace std;
-
-
-class UserResults
-{
-	const char* username;
-	int geographyScore;
-	int mathScore;
-	int englishScore;
-};
-
+extern int menuState;
+extern const char* selectedCourse;
+extern string validUsername;
 
 void userResultMenu()
 {
@@ -22,19 +17,39 @@ void userResultMenu()
 	if (CheckCollisionRecs({ 870,850, 200, 70 }, mousePos)) c2 = LIGHTGRAY; else c2 = RAYWHITE;
 	BeginDrawing();
 	ClearBackground(BEIGE);
-	DrawRectangleRounded({ 370, 100, 1200, 900 },0.25,0, RAYWHITE);
-	DrawRectangleRoundedLines({ 370, 100, 1200, 900 }, 0.25, 0,10, BLACK); // wrapper
-	DrawText("You PASS/FAIL", 650, 150, 80, BLACK);
+	DrawRectangleRounded({ 370, 100, 1200, 900 }, 0.25, 0, RAYWHITE);
+	DrawRectangleRoundedLines({ 370, 100, 1200, 900 }, 0.25, 0, 10, BLACK); // container
+	DrawText(TextFormat("%s 's result", validUsername.c_str()), 750, 150, 80, BLACK);
 	DrawText("Last Attempt Result", 725, 490, 50, BLACK);
 	DrawRectangleRounded({ 450,550, 1050, 150 }, 0.6, 0, RAYWHITE);
-	DrawRectangleRoundedLines({ 450,550, 1050, 150 }, 0.6, 0,7, BLACK); // score text holder
-	DrawText("You have scored 35/70 points (50%)", 480, 610,40, BLACK);
+	database db("database.db");
+	string sql = "SELECT score FROM " + (string)selectedCourse + "Results WHERE user = ? ORDER BY id DESC LIMIT 1";
+	query qry(db, sql.c_str());
+	qry.bind(1, validUsername.c_str(), nocopy);
+	int lastScore = 0;
+	for (auto v : qry) {
+		lastScore = v.get<int>(0);
+	}
+	cout << lastScore << endl;
+	DrawRectangleRoundedLines({ 450,550, 1050, 150 }, 0.6, 0, 7, BLACK); // score text holder
+	DrawText(TextFormat("You have scored %d/20 points", lastScore), 480, 610, 40, BLACK);
 	DrawRectangleRounded({ 1280,595, 170, 60 }, 0.6, 0, c1);
 	DrawRectangleRoundedLines({ 1280,595, 170, 60 }, 25, 0, 7, BLACK); //  review button
 	DrawText("Review", 1310, 610, 35, BLACK);
 	DrawRectangleRounded({ 870,850, 200, 70 }, 0.6, 0, c2);
 	DrawRectangleRoundedLines({ 870,850, 200, 70 }, 1, 0, 7, BLACK); //  back button
 	DrawText("Back", 915, 865, 45, BLACK);
+	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+	{
+		if (CheckCollisionRecs({ 870,850, 200, 70 }, mousePos))
+		{
+			menuState = 3;
+		}
+		if (CheckCollisionRecs({ 1280,595, 170, 60 }, mousePos))
+		{
+			menuState = 7;
+		}
+	}
 	EndDrawing();
 }
 
@@ -50,7 +65,7 @@ void adminResultMenu()
 	if (CheckCollisionRecs({ 1050,590, 275, 100 }, mousePos)) c4 = LIGHTGRAY; else c4 = RAYWHITE;
 	if (CheckCollisionRecs({ 1350,760, 250, 100 }, mousePos)) c5 = LIGHTGRAY; else c5 = RAYWHITE;
 	if (CheckCollisionRecs({ 1050,760, 275, 100 }, mousePos)) c6 = LIGHTGRAY; else c6 = RAYWHITE;
-	DrawRectangleRounded({ 250,200, 1420, 770 }, 0.25, 0, BEIGE);
+	DrawRectangleRounded({ 250,200, 1420, 770 }, 0.15, 0, RAYWHITE);
 	DrawRectangleRoundedLines({ 250,200, 1420, 770 }, 0.25, 0, 5, BLACK); //geography tab
 	DrawRectangleRounded({ 300,400, 1320, 140 }, 0.15, 0, RAYWHITE);  // geography tab
 	DrawRectangleRoundedLines({ 300,400, 1320, 140 }, 0.25, 0, 5, BLACK);

@@ -10,6 +10,9 @@ int counter = 1;
 string answerInput = "";
 int correctAnswers = 0;
 Color colorButton1 = RAYWHITE, colorButton2 = LIME;
+extern int menuState;
+extern string validUsername;
+database db("database.db");
 class QUESTION
 {
 	const char* question = "";
@@ -30,21 +33,23 @@ public:
 			for (int j = 0; j < qryQuestion.column_count(); ++j) {
 				question = (*i).get<const char*>(j);
 			}
-		DrawText(question, 225, 580, 40, BLACK);
+			DrawText(question, 225, 580, 40, BLACK);
 		}
 		for (sqlite3pp::query::iterator i = qryAnswer.begin(); i != qryAnswer.end(); ++i) {
 			for (int j = 0; j < qryAnswer.column_count(); ++j) {
 				answer = (*i).get<const char*>(j);
 			}
-			if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) 
+			if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 			{
 				if (CheckCollisionRecs({ 1250,900, 400, 100 }, mousePos)) {
 					if (answer == answerInput) correctAnswers++;
+					answerInput = "";
 					counter++;
 					index = GetRandomValue(1, 50);
 				}
 			}
 		}
+
 	}
 };
 
@@ -67,8 +72,8 @@ void testQuestion()
 	if (CheckCollisionRecs({ 1250,900, 400, 100 }, mousePos)) colorButton2 = LIME; else colorButton2 = RAYWHITE;
 	BeginDrawing();
 	ClearBackground(RAYWHITE);
-	DrawRectangleRounded({ 200, 420, 1450, 370 },0.2,0, SKYBLUE); //question rectangle
-	DrawRectangleRoundedLines({ 200, 420, 1450, 370 },0.2,0,5, BLACK);
+	DrawRectangleRounded({ 200, 420, 1450, 370 }, 0.2, 0, SKYBLUE); //question rectangle
+	DrawRectangleRoundedLines({ 200, 420, 1450, 370 }, 0.2, 0, 5, BLACK);
 	DrawRectangleRounded({ 200,900, 900, 100 }, 0.15, 0, colorButton1); // answer rectangle
 	DrawRectangleRoundedLines({ 200,900, 900, 100 }, 0.25, 0, 5, BLACK);
 	DrawRectangle(750, 150, 400, 170, RAYWHITE); //question number rectangle
@@ -77,10 +82,24 @@ void testQuestion()
 	q.displayQuestion();
 	DrawText(TextFormat("Question %d", counter), 775, 175, 60, BLACK);
 	DrawText(answerInput.c_str(), 225, 925, 60, BLACK);
-	if(counter < 20) DrawText("Next", 1375, 925, 60, BLACK);
-	else if(counter == 20) DrawText("Finish", 1375, 925, 60, BLACK);
+	if (counter < 20) DrawText("Next", 1375, 925, 60, BLACK);
+	else if (counter == 20) DrawText("Finish", 1375, 925, 60, BLACK);
 	if (selectedCourse == "Mathematics") DrawText("Solve the equation:", 225, 450, 50, BLACK);
 	if (selectedCourse == "Geography") DrawText("Answer the question:", 225, 450, 50, BLACK);
 	if (selectedCourse == "English") DrawText("Fill the blanks or Rewrite the correct sentence", 225, 450, 50, BLACK);
 	EndDrawing();
+	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+	{
+		if (CheckCollisionRecs({ 1250,900, 400, 100 }, mousePos) && counter == 20) {
+
+			string cmdPrompt = "INSERT INTO " + (string)selectedCourse + "Results(user,score) VALUES (:user,:score)";
+			command cmd(db, cmdPrompt.c_str());
+			cmd.bind(":user", validUsername.c_str(), nocopy);
+			cmd.bind(":score", correctAnswers);
+			cmd.execute();
+			correctAnswers = 0;
+			counter = 0;
+			menuState = 5;
+		}
+	}
 }

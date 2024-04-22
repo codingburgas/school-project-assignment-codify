@@ -13,7 +13,7 @@ bool registerUser(database& db, const char* username, const char* password)
 {
 	query q(db, "SELECT * FROM Users WHERE user = ?");
 	q.bind(1, username, nocopy);
-	if (q.begin() != q.end()) 
+	if (q.begin() != q.end())
 	{
 		cout << "Username already exists. Please choose a different one." << endl;
 		regInputUser = "";
@@ -57,7 +57,7 @@ void registerMenu(database& db)
 	BeginDrawing();
 	ClearBackground(SKYBLUE);
 	DrawRectangleRounded({ 600, 200, 700, 700 }, 0.2, 0, SKYBLUE);
-	DrawRectangleRoundedLines({ 600, 200, 700, 700 }, 0.2, 0, 7, BLACK); // wrapper
+	DrawRectangleRoundedLines({ 600, 200, 700, 700 }, 0.2, 0, 7, BLACK); // container
 	DrawRectangleRounded({ 650, 475, 600, 85 }, 0.2, 0, c1);
 	DrawRectangleRoundedLines({ 650, 475, 600, 85 }, 0.2, 0, 5, BLACK); // username input
 	DrawText(userText, 670, 500, 40, BLACK);
@@ -79,6 +79,6 @@ void registerMenu(database& db)
 			regInputPass = "";
 		}
 	}
-	
+
 	EndDrawing();
 }

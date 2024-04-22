@@ -4,9 +4,9 @@
 #include "../library/sqlite3pp-1.0.9/headeronly_src/sqlite3pp.h"
 using namespace std;
 using namespace sqlite3pp;
- string loginInputUser = "";
- string loginInputPass = "";
-
+string loginInputUser = "";
+string loginInputPass = "";
+string validUsername = "NULL";
 extern int menuState;
 
 
@@ -15,6 +15,7 @@ bool login(database& db, const char* username, const char* password)
 	query q(db, "SELECT * FROM Users WHERE user = ? AND password = ?");
 	q.bind(1, username, nocopy);
 	q.bind(2, password, nocopy);
+	validUsername = username;
 	if (q.begin() == q.end()) {
 		cout << "Invalid username or password. Please try again." << endl;
 		loginInputUser = "";
@@ -51,7 +52,7 @@ void loginMenu(database& db)
 	BeginDrawing();
 	ClearBackground(SKYBLUE);
 	DrawRectangleRounded({ 600, 200, 700, 700 }, 0.2, 0, SKYBLUE);
-	DrawRectangleRoundedLines({ 600, 200, 700, 700 }, 0.2, 0, 7, BLACK); // wrapper
+	DrawRectangleRoundedLines({ 600, 200, 700, 700 }, 0.2, 0, 7, BLACK); // container
 	DrawRectangleRounded({ 650, 475, 600, 85 }, 0.2, 0, c1);
 	DrawRectangleRoundedLines({ 650, 475, 600, 85 }, 0.2, 0, 5, BLACK); // username input
 	DrawText(userText, 670, 500, 40, BLACK);
@@ -73,5 +74,5 @@ void loginMenu(database& db)
 			loginInputPass = "";
 		}
 	}
-		EndDrawing();
+	EndDrawing();
 }

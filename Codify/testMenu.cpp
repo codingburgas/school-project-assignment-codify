@@ -4,7 +4,7 @@ const char* selectedCourse;
 extern int menuState;
 void testMenu()
 {
-	Color c1 = RAYWHITE, c2 = RAYWHITE, c3 = RAYWHITE, c4=RAYWHITE, c5=RAYWHITE, c6=RAYWHITE;
+	Color c1 = RAYWHITE, c2 = RAYWHITE, c3 = RAYWHITE, c4 = RAYWHITE, c5 = RAYWHITE, c6 = RAYWHITE;
 	Rectangle mousePos = { GetMouseX(), GetMouseY(), 10,10 };
 	BeginDrawing();
 	ClearBackground(RAYWHITE);
@@ -17,15 +17,15 @@ void testMenu()
 
 	DrawRectangleRounded({ 250,200, 1420, 730 }, 0.15, 0, RAYWHITE);
 	DrawRectangleRoundedLines({ 250,200, 1420, 730 }, 0.25, 0, 5, BLACK);
-	DrawRectangleRounded({ 300,400, 1320, 140}, 0.15, 0, BEIGE);  // maths tab
-	
-	DrawRectangleRoundedLines({ 300,400, 1320, 140}, 0.25, 0, 5, BLACK);
+	DrawRectangleRounded({ 300,400, 1320, 140 }, 0.15, 0, BEIGE);  // maths tab
+
+	DrawRectangleRoundedLines({ 300,400, 1320, 140 }, 0.25, 0, 5, BLACK);
 	DrawRectangleRounded({ 1350,420, 250, 100 }, 0.15, 0, c1); //review button
 	DrawRectangleRoundedLines({ 1350,420, 250, 100 }, 0.25, 0, 5, BLACK);
 	DrawRectangleRounded({ 1050,420, 275, 100 }, 0.15, 0, c2); //attempt button
 	DrawRectangleRoundedLines({ 1050,420, 275, 100 }, 0.25, 0, 5, BLACK);
 	DrawRectangleRounded({ 300,570, 1320, 140 }, 0.15, 0, BEIGE); //geography tab
-	DrawRectangleRoundedLines({ 300,570, 1320, 140 }, 0.25, 0, 5, BLACK); 
+	DrawRectangleRoundedLines({ 300,570, 1320, 140 }, 0.25, 0, 5, BLACK);
 	DrawRectangleRounded({ 1350,590, 250, 100 }, 0.15, 0, c3); //review button
 	DrawRectangleRoundedLines({ 1350,590, 250, 100 }, 0.25, 0, 5, BLACK);
 	DrawRectangleRounded({ 1050,590, 275, 100 }, 0.15, 0, c4); //attempt button
@@ -63,6 +63,21 @@ void testMenu()
 		if (CheckCollisionRecs({ 1050,760, 275, 100 }, mousePos))
 		{
 			menuState = 4;
+			selectedCourse = "English";
+		}
+		if (CheckCollisionRecs({ 1350,420, 250, 100 }, mousePos))
+		{
+			menuState = 5;
+			selectedCourse = "Mathematics";
+		}
+		if (CheckCollisionRecs({ 1350,590, 250, 100 }, mousePos))
+		{
+			menuState = 5;
+			selectedCourse = "Geography";
+		}
+		if (CheckCollisionRecs({ 1350,760, 250, 100 }, mousePos))
+		{
+			menuState = 5;
 			selectedCourse = "English";
 		}
 	}
