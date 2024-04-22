@@ -27,10 +27,7 @@
     <ClCompile Include="register.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="resultUserMenu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="adminTest.cpp">
+    <ClCompile Include="results.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="testMenu.cpp">
@@ -59,10 +56,7 @@
     <ClInclude Include="register.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="resultUserMenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="adminTest.h">
+    <ClInclude Include="results.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="testMenu.h">

@@ -16,6 +16,8 @@ bool registerUser(database& db, const char* username, const char* password)
 	if (q.begin() != q.end()) 
 	{
 		cout << "Username already exists. Please choose a different one." << endl;
+		regInputUser = "";
+		regInputPass = "";
 		return false;
 	}
 	command cmd(db, "INSERT INTO Users (user,password) VALUES (:user,:pass)");

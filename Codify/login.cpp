@@ -17,6 +17,8 @@ bool login(database& db, const char* username, const char* password)
 	q.bind(2, password, nocopy);
 	if (q.begin() == q.end()) {
 		cout << "Invalid username or password. Please try again." << endl;
+		loginInputUser = "";
+		loginInputPass = "";
 		return false;
 	}
 	cout << "Login successful!" << endl;

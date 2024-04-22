@@ -137,24 +137,22 @@
   <ItemGroup>
     <ClCompile Include="..\library\sqlite\shell.c" />
     <ClCompile Include="..\library\sqlite\sqlite3.c" />
-    <ClCompile Include="adminTest.cpp" />
     <ClCompile Include="categories.cpp" />
     <ClCompile Include="Codify.cpp" />
     <ClCompile Include="login.cpp" />
     <ClCompile Include="mainMenu.cpp" />
     <ClCompile Include="register.cpp" />
-    <ClCompile Include="resultUserMenu.cpp" />
+    <ClCompile Include="results.cpp" />
     <ClCompile Include="testMenu.cpp" />
     <ClCompile Include="testQuestion.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="adminTest.h" />
     <ClInclude Include="categories.h" />
     <ClInclude Include="testQuestion.h" />
     <ClInclude Include="login.h" />
     <ClInclude Include="mainMenu.h" />
     <ClInclude Include="register.h" />
-    <ClInclude Include="resultUserMenu.h" />
+    <ClInclude Include="results.h" />
     <ClInclude Include="testMenu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

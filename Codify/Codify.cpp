@@ -3,11 +3,10 @@
 #include "mainMenu.h"
 #include "login.h"
 #include "register.h"
-#include "resultUserMenu.h"
+#include "results.h"
 #include "testMenu.h"
-#include "adminTest.h"
 #include "categories.h"
-#include "testQuestion.cpp"
+#include "testQuestion.h"
 #include "../library/sqlite3pp-1.0.9/headeronly_src/sqlite3pp.h"
 
 using namespace std;
@@ -34,13 +33,16 @@ int main()
 		case 3:
 			testMenu();
 		 break;
-		case 4:
-			userResultMenu();
+		case 4: 
+			testQuestion();
 		 break;
 		case 5:
-			adminTest();
+			userResultMenu();
 		 break;
 		case 6:
+			adminResultMenu();
+		 break;
+		case 7:
 			categories();
 		 break;
 		}
