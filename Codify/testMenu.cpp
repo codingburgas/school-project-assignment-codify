@@ -17,20 +17,20 @@ void testMenu()
 
 	DrawRectangleRounded({ 250,200, 1420, 730 }, 0.15, 0, RAYWHITE);
 	DrawRectangleRoundedLines({ 250,200, 1420, 730 }, 0.25, 0, 5, BLACK);
-	DrawRectangleRounded({ 300,400, 1320, 140}, 0.15, 0, RAYWHITE);  // maths tab
+	DrawRectangleRounded({ 300,400, 1320, 140}, 0.15, 0, BEIGE);  // maths tab
 	
 	DrawRectangleRoundedLines({ 300,400, 1320, 140}, 0.25, 0, 5, BLACK);
 	DrawRectangleRounded({ 1350,420, 250, 100 }, 0.15, 0, c1); //review button
 	DrawRectangleRoundedLines({ 1350,420, 250, 100 }, 0.25, 0, 5, BLACK);
 	DrawRectangleRounded({ 1050,420, 275, 100 }, 0.15, 0, c2); //attempt button
 	DrawRectangleRoundedLines({ 1050,420, 275, 100 }, 0.25, 0, 5, BLACK);
-	DrawRectangleRounded({ 300,570, 1320, 140 }, 0.15, 0, RAYWHITE); //geography tab
+	DrawRectangleRounded({ 300,570, 1320, 140 }, 0.15, 0, BEIGE); //geography tab
 	DrawRectangleRoundedLines({ 300,570, 1320, 140 }, 0.25, 0, 5, BLACK); 
 	DrawRectangleRounded({ 1350,590, 250, 100 }, 0.15, 0, c3); //review button
 	DrawRectangleRoundedLines({ 1350,590, 250, 100 }, 0.25, 0, 5, BLACK);
 	DrawRectangleRounded({ 1050,590, 275, 100 }, 0.15, 0, c4); //attempt button
 	DrawRectangleRoundedLines({ 1050,590, 275, 100 }, 0.25, 0, 5, BLACK);
-	DrawRectangleRounded({ 300,740, 1320, 140 }, 0.15, 0, RAYWHITE); //english tab
+	DrawRectangleRounded({ 300,740, 1320, 140 }, 0.15, 0, BEIGE); //english tab
 	DrawRectangleRoundedLines({ 300,740, 1320, 140 }, 0.25, 0, 5, BLACK);
 	DrawRectangleRounded({ 1350,760, 250, 100 }, 0.15, 0, c5); //review button
 	DrawRectangleRoundedLines({ 1350,760, 250, 100 }, 0.25, 0, 5, BLACK);

@@ -9,7 +9,7 @@ int index = GetRandomValue(1, 50);
 int counter = 1;
 string answerInput = "";
 int correctAnswers = 0;
-Color colorButton1 = RAYWHITE, colorButton2 = RAYWHITE;
+Color colorButton1 = RAYWHITE, colorButton2 = LIME;
 class QUESTION
 {
 	const char* question = "";
@@ -64,10 +64,10 @@ void testQuestion()
 	if (IsKeyPressed(KEY_BACKSPACE) && answerInput.length() > 0 && CheckCollisionRecs({ 200,900, 900, 100 }, mousePos)) answerInput.pop_back();
 	if (CheckCollisionRecs({ 200,900, 900, 100 }, mousePos) || CheckCollisionRecs({ 1250,900, 400, 100 }, mousePos)) SetMouseCursor(MOUSE_CURSOR_POINTING_HAND); else SetMouseCursor(MOUSE_CURSOR_DEFAULT);
 	if (CheckCollisionRecs({ 200,900, 900, 100 }, mousePos)) colorButton1 = LIGHTGRAY; else colorButton1 = RAYWHITE;
-	if (CheckCollisionRecs({ 1250,900, 400, 100 }, mousePos)) colorButton2 = LIGHTGRAY; else colorButton2 = RAYWHITE;
+	if (CheckCollisionRecs({ 1250,900, 400, 100 }, mousePos)) colorButton2 = LIME; else colorButton2 = RAYWHITE;
 	BeginDrawing();
 	ClearBackground(RAYWHITE);
-	DrawRectangleRounded({ 200, 420, 1450, 370 },0.5,0, RAYWHITE); //question rectangle
+	DrawRectangleRounded({ 200, 420, 1450, 370 },0.2,0, SKYBLUE); //question rectangle
 	DrawRectangleRoundedLines({ 200, 420, 1450, 370 },0.2,0,5, BLACK);
 	DrawRectangleRounded({ 200,900, 900, 100 }, 0.15, 0, colorButton1); // answer rectangle
 	DrawRectangleRoundedLines({ 200,900, 900, 100 }, 0.25, 0, 5, BLACK);
