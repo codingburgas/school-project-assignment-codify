@@ -27,6 +27,7 @@ You can install our project by using this link:
 
 
 ## <img align="center" src="https://cdn-icons-png.flaticon.com/512/3396/3396255.png" width="30">   Documents
+- <img src="https://findicons.com/files/icons/2795/office_2013_hd/2000/word.png" width="20"> [Documentation](https://codingburgas-my.sharepoint.com/:b:/g/personal/innedkova21_codingburgas_bg/EWc2Q3_qSilMnoJAFEszCXEBfCuGixFBLDkLIjIA9WNqMw?e=wEUn89)
 
 
 ## <img align="center" src="https://cdn-icons-png.flaticon.com/512/2620/2620993.png" width="30"> Used technologies
