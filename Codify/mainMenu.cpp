@@ -3,15 +3,15 @@ using namespace std;
 extern int menuState;
 void mainMenu()
 {
-	Color c1 = RAYWHITE, c2 = RAYWHITE;
+	Color c1 = SKYBLUE, c2 = SKYBLUE;
 	Rectangle mousePos = { GetMouseX(), GetMouseY(), 10,10 };
 	if (CheckCollisionRecs({ 1920.0f / 2.43f, 490,370,80 }, mousePos) || CheckCollisionRecs({ 1920.0f / 2.43f, 610,370,80 }, mousePos))
 		SetMouseCursor(MOUSE_CURSOR_POINTING_HAND); else SetMouseCursor(MOUSE_CURSOR_DEFAULT);
-	if (CheckCollisionRecs({ 1920.0f / 2.43f, 490,370,80 }, mousePos)) c1 = LIGHTGRAY; else c1 = RAYWHITE;
-	if (CheckCollisionRecs({ 1920.0f / 2.43f, 610,370,80 }, mousePos)) c2 = LIGHTGRAY; else c2 = RAYWHITE;
+	if (CheckCollisionRecs({ 1920.0f / 2.43f, 490,370,80 }, mousePos)) c1 = BLUE; else c1 = SKYBLUE;
+	if (CheckCollisionRecs({ 1920.0f / 2.43f, 610,370,80 }, mousePos)) c2 = BLUE; else c2 = SKYBLUE;
 	BeginDrawing();
-	ClearBackground(RAYWHITE);
-	DrawRectangleRounded({ 1920.0f / 3.1f, 290, 700,550 }, 0.15, 0, RAYWHITE);
+	ClearBackground(SKYBLUE);
+	DrawRectangleRounded({ 1920.0f / 3.1f, 290, 700,550 }, 0.15, 0, SKYBLUE);
 	DrawRectangleRoundedLines({ 1920.0f / 3.1f, 290, 700,550 }, 0.15, 0, 3, BLACK); // buttons container
 	DrawText("Welcome to Codify", 1920.0f / 2.75f, 330, 60, BLACK);
 	DrawRectangleRounded({1920.0f / 2.43f, 490,370,80 }, 0.2, 0, c1);

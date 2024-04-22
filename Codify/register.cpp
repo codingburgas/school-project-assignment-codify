@@ -30,12 +30,12 @@ bool registerUser(database& db, const char* username, const char* password)
 void registerMenu(database& db)
 {
 	Rectangle mousePos = { GetMouseX(), GetMouseY(), 10,10 };
-	Color c1 = RAYWHITE, c2 = RAYWHITE, c3 = RAYWHITE;
+	Color c1 = SKYBLUE, c2 = SKYBLUE, c3 = SKYBLUE;
 	if (CheckCollisionRecs({ 650, 475, 600, 85 }, mousePos) || CheckCollisionRecs({ 650, 600, 600, 85 }, mousePos) || CheckCollisionRecs({ 850, 775, 200, 85 }, mousePos))
 		SetMouseCursor(MOUSE_CURSOR_POINTING_HAND); else SetMouseCursor(MOUSE_CURSOR_DEFAULT);
-	if (CheckCollisionRecs({ 650, 475, 600, 85 }, mousePos)) c1 = LIGHTGRAY; else c1 = RAYWHITE;
-	if (CheckCollisionRecs({ 650, 600, 600, 85 }, mousePos)) c2 = LIGHTGRAY; else c2 = RAYWHITE;
-	if (CheckCollisionRecs({ 850, 775, 200, 85 }, mousePos)) c3 = LIGHTGRAY; else c3 = RAYWHITE;
+	if (CheckCollisionRecs({ 650, 475, 600, 85 }, mousePos)) c1 = BLUE; else c1 = SKYBLUE;
+	if (CheckCollisionRecs({ 650, 600, 600, 85 }, mousePos)) c2 = BLUE; else c2 = SKYBLUE;
+	if (CheckCollisionRecs({ 850, 775, 200, 85 }, mousePos)) c3 = BLUE; else c3 = SKYBLUE;
 	// hover checks
 
 	int key = GetKeyPressed();
@@ -55,8 +55,8 @@ void registerMenu(database& db)
 
 
 	BeginDrawing();
-	ClearBackground(RAYWHITE);
-	DrawRectangleRounded({ 600, 200, 700, 700 }, 0.2, 0, RAYWHITE);
+	ClearBackground(SKYBLUE);
+	DrawRectangleRounded({ 600, 200, 700, 700 }, 0.2, 0, SKYBLUE);
 	DrawRectangleRoundedLines({ 600, 200, 700, 700 }, 0.2, 0, 7, BLACK); // wrapper
 	DrawRectangleRounded({ 650, 475, 600, 85 }, 0.2, 0, c1);
 	DrawRectangleRoundedLines({ 650, 475, 600, 85 }, 0.2, 0, 5, BLACK); // username input
