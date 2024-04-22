@@ -19,33 +19,7 @@ int main()
 	InitWindow(1920, 1080, "Codify");
 	while (!WindowShouldClose())
 	{
-		switch (menuState)
-		{
-		case 0:
-			mainMenu();
-		 break;
-		case 1:
-			loginMenu(db);
-		 break; 
-		case 2:
-			registerMenu(db);
-		 break;
-		case 3:
-			testMenu();
-		 break;
-		case 4: 
-			testQuestion();
-		 break;
-		case 5:
-			userResultMenu();
-		 break;
-		case 6:
-			adminResultMenu();
-		 break;
-		case 7:
 			categories();
-		 break;
-		}
 	}
 	CloseWindow();
 }

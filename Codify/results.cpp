@@ -21,8 +21,8 @@ void userResultMenu()
 	if (CheckCollisionRecs({ 1280,595, 170, 60 }, mousePos)) c1 = LIGHTGRAY; else c1 = RAYWHITE;
 	if (CheckCollisionRecs({ 870,850, 200, 70 }, mousePos)) c2 = LIGHTGRAY; else c2 = RAYWHITE;
 	BeginDrawing();
-	ClearBackground(RAYWHITE);
-	DrawRectangleRounded({ 370, 100, 1200, 900 },0.5,0, RAYWHITE);
+	ClearBackground(BEIGE);
+	DrawRectangleRounded({ 370, 100, 1200, 900 },0.25,0, RAYWHITE);
 	DrawRectangleRoundedLines({ 370, 100, 1200, 900 }, 0.25, 0,10, BLACK); // wrapper
 	DrawText("You PASS/FAIL", 650, 150, 80, BLACK);
 	DrawText("Last Attempt Result", 725, 490, 50, BLACK);
@@ -50,7 +50,7 @@ void adminResultMenu()
 	if (CheckCollisionRecs({ 1050,590, 275, 100 }, mousePos)) c4 = LIGHTGRAY; else c4 = RAYWHITE;
 	if (CheckCollisionRecs({ 1350,760, 250, 100 }, mousePos)) c5 = LIGHTGRAY; else c5 = RAYWHITE;
 	if (CheckCollisionRecs({ 1050,760, 275, 100 }, mousePos)) c6 = LIGHTGRAY; else c6 = RAYWHITE;
-	DrawRectangleRounded({ 250,200, 1420, 770 }, 0.15, 0, RAYWHITE);
+	DrawRectangleRounded({ 250,200, 1420, 770 }, 0.25, 0, BEIGE);
 	DrawRectangleRoundedLines({ 250,200, 1420, 770 }, 0.25, 0, 5, BLACK); //geography tab
 	DrawRectangleRounded({ 300,400, 1320, 140 }, 0.15, 0, RAYWHITE);  // geography tab
 	DrawRectangleRoundedLines({ 300,400, 1320, 140 }, 0.25, 0, 5, BLACK);

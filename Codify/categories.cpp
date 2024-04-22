@@ -15,15 +15,15 @@ void categories()
 	if (CheckCollisionRecs({ 1350,760, 250, 100 }, mousePos)) c5 = LIGHTGRAY; else c5 = RAYWHITE;
 	if (CheckCollisionRecs({ 1050,760, 275, 100 }, mousePos)) c6 = LIGHTGRAY; else c6 = RAYWHITE;
 
-	DrawRectangleRounded({ 300,120, 1320, 140 }, 0.15, 0, RAYWHITE);  // category1 tab
+	DrawRectangleRounded({ 300,120, 1320, 140 }, 0.15, 0, SKYBLUE);  // category1 tab
 	DrawRectangleRoundedLines({ 300,120, 1320, 140 }, 0.25, 0, 5, BLACK);
-	DrawRectangleRounded({ 300,290, 1320, 140 }, 0.15, 0, RAYWHITE);  // category2 tab
+	DrawRectangleRounded({ 300,290, 1320, 140 }, 0.15, 0, SKYBLUE);  // category2 tab
 	DrawRectangleRoundedLines({ 300,290, 1320, 140 }, 0.25, 0, 5, BLACK);
-	DrawRectangleRounded({ 300,460, 1320, 140 }, 0.15, 0, RAYWHITE); //category3 tab
+	DrawRectangleRounded({ 300,460, 1320, 140 }, 0.15, 0, SKYBLUE); //category3 tab
 	DrawRectangleRoundedLines({ 300,460, 1320, 140 }, 0.25, 0, 5, BLACK);
-	DrawRectangleRounded({ 300,630, 1320, 140 }, 0.15, 0, RAYWHITE); //category4 tab
+	DrawRectangleRounded({ 300,630, 1320, 140 }, 0.15, 0, SKYBLUE); //category4 tab
 	DrawRectangleRoundedLines({ 300,630, 1320, 140 }, 0.25, 0, 5, BLACK);
-	DrawRectangleRounded({ 300,800, 1320, 140 }, 0.15, 0, RAYWHITE); //category5 tab
+	DrawRectangleRounded({ 300,800, 1320, 140 }, 0.15, 0, SKYBLUE); //category5 tab
 	DrawRectangleRoundedLines({ 300,800, 1320, 140 }, 0.25, 0, 5, BLACK);
 	DrawText("Categories Review", 675, 35, 60, BLACK);
 	DrawText("Categories 1 - %", 700, 160, 60, BLACK);
